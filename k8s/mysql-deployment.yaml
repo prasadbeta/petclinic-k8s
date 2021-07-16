@@ -54,7 +54,7 @@ spec:
       - image: mysql:5.7 # image from docker-hub
         args:
           - "--ignore-db-dir=lost+found" # Workaround for https://github.com/docker-library/mysql/issues/186
-          - "--default-authentication-plugin=mysql_native_password"
+          - "--default-authentication-plugin=mysql_native_password" # The mysql_native_password authentication plugin is statically linked into the server, so no installation is necessary
         name: kumar-mysql 
         env:
         - name: MYSQL_ROOT_PASSWORD # Setting Root Password of mysql From a 'Secret'
